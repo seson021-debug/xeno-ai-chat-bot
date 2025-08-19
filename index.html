@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xeno AI Chat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              teal: {
+                50: '#f0fdfa',
+                100: '#ccfbf1',
+                200: '#99f6e4',
+                300: '#5eead4',
+                400: '#2dd4bf',
+                500: '#14b8a6',
+                600: '#0d9488',
+                700: '#0f766e',
+                800: '#115e59',
+                900: '#134e4a',
+                950: '#042f2e',
+              },
+            },
+            keyframes: {
+              glow: {
+                '0%, 100%': { 
+                  boxShadow: '0 0 5px rgba(20, 184, 166, 0.4), 0 0 8px rgba(45, 212, 191, 0.3)'
+                },
+                '50%': { 
+                  boxShadow: '0 0 15px rgba(20, 184, 166, 0.6), 0 0 25px rgba(45, 212, 191, 0.5)'
+                },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              pulseGlow: {
+                '0%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(20, 184, 166, 0.7)' },
+                '70%': { transform: 'scale(1)', boxShadow: '0 0 0 10px rgba(20, 184, 166, 0)' },
+                '100%': { transform: 'scale(0.95)', boxShadow: '0 0 0 0 rgba(20, 184, 166, 0)' },
+              }
+            },
+            animation: {
+              glow: 'glow 3s ease-in-out infinite',
+              'fade-in': 'fadeIn 0.4s ease-out forwards',
+              'pulse-glow': 'pulseGlow 2s infinite',
+            },
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.15.0",
+    "firebase/": "https://esm.sh/firebase@^12.1.0/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
